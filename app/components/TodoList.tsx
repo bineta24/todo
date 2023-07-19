@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaTrash, FaPlus } from 'react-icons/fa';
+import { FaTrash, FaPlus, FaList, FaCheckCircle } from 'react-icons/fa';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 
@@ -26,32 +26,28 @@ const TodoList: React.FC<TodoListProps> = ({
 
   return (
     <div>
-      <Tabs defaultValue="account" className="w-80 h-96 bg-white">
-        <TabsList className='w-80' >
-          <TabsTrigger value="account">Todos</TabsTrigger>
-          <TabsTrigger value="password">Todos completed</TabsTrigger>
+      <Tabs defaultValue="account" className="w-80 h-[500px] bg-white rounded-lg">
+        <TabsList className='w-80 h-20  ' >
+          <TabsTrigger value="account" className='w-40 h-20 bg-red  '><FaList className=' w-12 h-5 ' /></TabsTrigger>
+          <TabsTrigger value="password" className='w-40 h-20'><FaCheckCircle className=' text-red w-12 h-5' /></TabsTrigger>
         </TabsList>
         <TabsContent value="account">
           <ul className='mt-4'>
             {todos.map((todo, index) => (
               <li key={index} className='mb-6 ml-4 ' >
                 <div>
-                  <input
+                <input
                     type="checkbox"
                     checked={todo.completed}
                     onChange={() => handleToggle(index)}
-                  />
+                    className="h-6 w-6 rounded-xl shadow mr-4"
+  />
                   <span
-                    className={`${todo.completed ? 'line-through' : ''}`}
+                    className={`${todo.completed ? 'line-through text-gray-300 ' : ''}`}
                   >
                     {todo.text}
                   </span>
-                  <button
-                    onClick={() => handleDelete(index)}
-                    className="text-red-500 ml-2"
-                  >
-                    <FaTrash />
-                  </button>
+                
                 </div>
               </li>
             ))}
@@ -63,18 +59,19 @@ const TodoList: React.FC<TodoListProps> = ({
               <li key={index} className='mb-6 ml-4 ' >
                 <div>
                   <input
+                  className=' h-6 w-6 rounded-xl shadow mr-4'
                     type="checkbox"
                     checked={todo.completed}
                     onChange={() => handleToggle(index)}
                   />
                   <span
-                    className={`${todo.completed ? 'line-through' : ''}`}
+                    className= {`${todo.completed ? 'line-through text-gray-300 ' : ''}`}
                   >
                     {todo.text}
                   </span>
                   <button
                     onClick={() => handleDelete(index)}
-                    className="text-red-500 ml-2"
+                    className="text-red-500 ml-6"
                   >
                     <FaTrash />
                   </button>

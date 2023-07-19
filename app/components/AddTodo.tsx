@@ -41,11 +41,11 @@ const AddTodo: React.FC<AddTodoProps> = ({ handleAddTodo }) => {
                 type="text"
                 {...register('newTodo')}
                 placeholder="Nouvelle tâche"
-                className="rounded-l-md px-4 py-2 border border-gray-300 focus:outline-none focus:border-blue-500"
+                className="rounded-full  px-4 py-2 border border-gray-300 focus:outline-none focus:border-blue-500"
               />
               <button
                 type="submit"
-                className=" ml-4  rounded-r-md px-4 py-2 bg-blue-500 text-white hover:bg-blue-600 focus:outline-none"
+                className=" ml-4 rounded-full  px-4 py-2 bg-blue-500 text-white hover:bg-blue-600 focus:outline-none"
               >
                 Ajouter
               </button>

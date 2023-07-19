@@ -46,8 +46,8 @@ const Home: React.FC = () => {
 
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-bineta">
-      <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center justify-center h-screen bg-gradient-to-r from-primary to-secondary w-full "  >
+      <div className="flex flex-col items-center   ">
         <TodoList
           todos={todos}
           handleToggle={handleToggleTodo}
@@ -57,8 +57,8 @@ const Home: React.FC = () => {
       <div className="flex justify-center mb-4">
         <div className="relative">
           <Dialog open={dialogOpen} onOpenChange={(open) => setDialogOpen(open)}>
-            <DialogTrigger className="rounded-full bg-yellow-500 w-16 h-16 flex items-center justify-center absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <FaPlus className="text-white" />
+            <DialogTrigger className=" bg-jaune rounded-full  w-16 h-16 flex items-center justify-center absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+              <FaPlus className="text-white bg-jaune " />
             </DialogTrigger>
             <AddTodo handleAddTodo={handleAddTodo} />
           </Dialog>

@@ -17,7 +17,9 @@ module.exports = {
     },
     extend: {
       colors: {
-        bineta:"#ebb1c3"
+        primary: '#ebb1c3',
+        secondary: '#bf8ec7',
+        jaune:"#ffba74"
 
       },
       keyframes: {
